@@ -42,7 +42,9 @@
     "web": "expo start --web",
     "typecheck": "tsc --noEmit",
     "start:tunnel": "expo start --tunnel",
-    "check": "npm run typecheck"
+    "check": "npm run typecheck",
+    "test": "npm run test:automated",
+    "test:automated": "npm run typecheck && npx expo install --check && npx expo-doctor && npx expo export --platform android --output-dir dist/test-validation --clear"
   },
   "private": true,
   "license": "MIT",

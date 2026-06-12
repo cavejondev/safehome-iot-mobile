@@ -148,9 +148,13 @@ Este app foi montado para consumir estes grupos de endpoints da API:
 
 ## Validacoes feitas
 
-- `npm run typecheck`
-- `npx expo-doctor`
-- `npx expo config --type public`
+Execute todos os testes automaticos com:
+
+```bash
+npm test
+```
+
+O plano e os resultados dos testes estao documentados na pasta `tests`.
 
 ## Licenca
 
