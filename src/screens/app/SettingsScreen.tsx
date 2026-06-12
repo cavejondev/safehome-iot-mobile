@@ -334,7 +334,7 @@ export function SettingsScreen() {
             label="Versao do firmware"
             value={gatewayForm.firmwareVersion}
             onChangeText={(value) => setGatewayForm((current) => ({ ...current, firmwareVersion: value }))}
-            placeholder="1.0.0"
+            placeholder="1.0.1"
           />
           <PrimaryButton
             label="Criar gateway"
