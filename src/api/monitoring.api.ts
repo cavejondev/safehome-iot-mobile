@@ -53,9 +53,16 @@ export function listEvents(token: string, householdId: string, limit = 40): Prom
     return mockBackend.listEvents(limit);
   }
 
-  return apiRequest<TimelineEvent[]>(`/households/${householdId}/events?limit=${limit}`, {
-    token
-  });
+  return getDashboard(token, householdId).then((dashboard) =>
+    dashboard.latestEvents.slice(0, limit).map((event) => ({
+      id: event.id,
+      type: event.type,
+      occurredAt: event.occurredAt,
+      deviceId: event.id,
+      deviceName: event.label,
+      locationLabel: null
+    }))
+  );
 }
 
 export function getActivityReport(
